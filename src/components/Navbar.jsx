@@ -35,14 +35,14 @@ export default function Navbar() {
                 {/* Logo / Brand Name */}
                 <div className="flex items-center gap-2">
                     <Menu className="w-6 h-6 md:hidden cursor-pointer" />
-                    <span className="font-display font-bold text-xl tracking-tight">Sip Haven.</span>
+                    <span className="font-display font-bold text-xl tracking-tight">Sip Haven</span>
                 </div>
 
                 {/* Desktop Links (Hidden on mobile) */}
                 <div className="hidden md:flex items-center gap-8 font-medium text-sm text-foreground/80">
-                    <a href="#features" className="hover:text-primary transition-colors">Features</a>
-                    <a href="#reviews" className="hover:text-primary transition-colors">Reviews</a>
-                    <a href="#specs" className="hover:text-primary transition-colors">Tech Specs</a>
+                    <a href="#" className="hover:text-primary transition-colors">Home</a>
+                    <a href="#features" className="hover:text-primary transition-colors">Coffee</a>
+                    <a href="#" className="hover:text-primary transition-colors">Tea Recipes</a>
                 </div>
 
                 {/* Persistent CTA */}
