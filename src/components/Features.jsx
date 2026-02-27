@@ -1,26 +1,26 @@
-import { AudioWaveform, Zap, Wifi } from 'lucide-react';
+import { Coffee, Droplets, Moon } from 'lucide-react';
 
 export default function Features() {
     const features = [
         {
-            title: "Uncompromising Fidelity",
-            description: "Custom-tuned 50mm dynamic drivers deliver a soundstage so vast, you'll feel every note vibrating through your soul. Precision-engineered acoustic mesh maintains absolute clarity.",
-            icon: <AudioWaveform className="w-6 h-6 text-primary" />,
-            image: "/feature1_audio.png",
+            title: "Swiss Water® Decaf",
+            description: "Crafted for those who crave the flavor but not the caffeine. Our chemical-free decaffeination process preserves the delicate notes of strawberry and almond without the jitters.",
+            icon: <Droplets className="w-6 h-6 text-primary" />,
+            image: "/feature1_coffee.png",
             reversed: false
         },
         {
-            title: "Architectural Elegance",
-            description: "Forged from aerospace-grade aluminum and wrapped in acoustic fabric. Eclipse doesn't just play your music—it elevates the aesthetic of any room it occupies.",
-            icon: <Zap className="w-6 h-6 text-primary" />,
-            image: "/feature2_design.png",
+            title: "Ethically Sourced",
+            description: "Single-origin beans handpicked from the highlands of Ethiopia. We work directly with farmers to ensure fair wages and sustainable agricultural practices.",
+            icon: <Coffee className="w-6 h-6 text-primary" />,
+            image: "/feature2_coffee.png",
             reversed: true
         },
         {
-            title: "Intuitive Intelligence",
-            description: "Seamlessly connects to your entire ecosystem. With advanced spatial awareness, it automatically tunes its EQ to match the exact acoustics of your room.",
-            icon: <Wifi className="w-6 h-6 text-primary" />,
-            image: "/feature3_smart.png",
+            title: "Restful Evenings",
+            description: "Finally, a rich, sweet, and beautifully balanced cup of coffee you can enjoy right before bed. Because great coffee shouldn't keep you awake.",
+            icon: <Moon className="w-6 h-6 text-primary" />,
+            image: "/feature3_coffee.png",
             reversed: false
         }
     ];
@@ -30,9 +30,9 @@ export default function Features() {
             <div className="container mx-auto px-4 md:px-6">
 
                 <div className="text-center max-w-3xl mx-auto mb-20">
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Mastery in every detail.</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Masterfully Roasted.</h2>
                     <p className="text-lg text-foreground/70">
-                        We spent three years refining the relationship between aesthetics and acoustics so you never have to compromise.
+                        We spend months sourcing and refining the perfect roast profile so you never have to compromise on flavor.
                     </p>
                 </div>
 
@@ -62,7 +62,7 @@ export default function Features() {
                                     {feature.description}
                                 </p>
                                 <a href="#" className="font-medium text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-1 group">
-                                    Learn more about engineering
+                                    Learn more about our process
                                     <span className="transition-transform group-hover:translate-x-1">→</span>
                                 </a>
                             </div>

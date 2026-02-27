@@ -4,26 +4,26 @@ export default function SocialProof() {
     const reviews = [
         {
             author: "Sarah J.",
-            role: "Audio Engineer",
-            content: "The clarity is unmatched. I've tested speakers five times this price that don't even come close to the soundstage Eclipse provides.",
+            role: "Coffee Enthusiast",
+            content: "The flavor profile is unmatched. I've tried dozens of decafs that taste flat or burnt, but Sip Haven is genuinely sweet and complex.",
             rating: 5
         },
         {
             author: "Marcus T.",
-            role: "Interior Designer",
-            content: "Finally, a smart speaker that doesn't look like a plastic toy. It's a genuine piece of modern art that happens to sound incredible.",
+            role: "Home Barista",
+            content: "Finally, a decaf that pulls a beautiful shot of espresso. The crema is thick and the strawberry notes really shine through.",
             rating: 5
         },
         {
             author: "Elena R.",
-            role: "Music Producer",
-            content: "The low-end response is tight and punchy without muddying the mids. It's my new reference speaker for mixing in the living room.",
+            role: "Night Owl",
+            content: "This is my go-to evening ritual. It gives me the cozy satisfaction of a great cup of coffee without ruining my sleep schedule.",
             rating: 5
         },
         {
             author: "David L.",
-            role: "Audiophile",
-            content: "Absolutely blown away. The spatial tuning actually works. Moving it from my desk to the bookshelf automatically adjusted the EQ perfectly.",
+            role: "Café Owner",
+            content: "Absolutely blown away by the quality. The Swiss Water process makes a world of difference. My customers can't even tell it's decaf.",
             rating: 4
         }
     ];
@@ -35,7 +35,7 @@ export default function SocialProof() {
                 <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
                     <div className="max-w-xl">
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Don't just take our word for it.</h2>
-                        <p className="text-lg text-foreground/70">Trusted by over 10,000 audiophiles globally.</p>
+                        <p className="text-lg text-foreground/70">Trusted by over 10,000 coffee lovers globally.</p>
                     </div>
 
                     <div className="flex flex-col items-start md:items-end">
