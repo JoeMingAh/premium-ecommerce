@@ -36,3 +36,20 @@ export const createCheckoutWithProduct = async (variantId, quantity = 1) => {
         throw error;
     }
 };
+
+/**
+ * Fetches the first available product from the Shopify store
+ * @returns {Promise<Object|null>} The Shopify Product object or null
+ */
+export const fetchDefaultProduct = async () => {
+    try {
+        const products = await client.product.fetchAll();
+        if (products && products.length > 0) {
+            return products[0];
+        }
+        return null;
+    } catch (error) {
+        console.error("Error fetching product data:", error);
+        return null;
+    }
+};

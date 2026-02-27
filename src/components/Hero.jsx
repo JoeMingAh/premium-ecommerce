@@ -1,17 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ShoppingBag, PlayCircle, Loader2 } from 'lucide-react';
-import { createCheckoutWithProduct } from '../lib/shopify';
+import { createCheckoutWithProduct, fetchDefaultProduct } from '../lib/shopify';
 
 export default function Hero() {
     const [isCheckingOut, setIsCheckingOut] = useState(false);
+    const [productInfo, setProductInfo] = useState({
+        title: "Eclipse 2.0",
+        description: "Experience studio-quality audio enclosed in a masterpiece of modern architecture. Designed for the purist.",
+        imageUrl: "/hero_product.png",
+        variantId: "gid://shopify/ProductVariant/45505881564227"
+    });
 
-    // The Variant ID retrieved from the Shopify store
-    const VARIANT_ID = "gid://shopify/ProductVariant/45505881564227";
+    useEffect(() => {
+        const loadProduct = async () => {
+            const product = await fetchDefaultProduct();
+            if (product) {
+                setProductInfo({
+                    title: product.title || "Premium Product",
+                    description: product.description || "Experience studio-quality audio enclosed in a masterpiece of modern architecture. Designed for the purist.",
+                    imageUrl: product.images[0]?.src || "/hero_product.png",
+                    variantId: product.variants[0]?.id || "gid://shopify/ProductVariant/45505881564227"
+                });
+            }
+        };
+        loadProduct();
+    }, []);
 
     const handleCheckout = async () => {
         setIsCheckingOut(true);
         try {
-            const checkoutUrl = await createCheckoutWithProduct(VARIANT_ID, 1);
+            const checkoutUrl = await createCheckoutWithProduct(productInfo.variantId, 1);
             window.location.href = checkoutUrl;
         } catch (error) {
             console.error("Checkout error:", error);
@@ -25,8 +43,8 @@ export default function Hero() {
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background z-10"></div>
                 <img
-                    src="/hero_product.png"
-                    alt="Premium Smart Speaker"
+                    src={productInfo.imageUrl}
+                    alt={productInfo.title}
                     className="w-full h-full object-cover object-center animate-fade-in-up"
                 />
             </div>
@@ -36,7 +54,7 @@ export default function Hero() {
 
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted/80 backdrop-blur border border-border text-sm font-medium mb-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                     <span className="w-2 h-2 rounded-full bg-primary animate-subtle-pulse"></span>
-                    Introducing Eclipse 2.0
+                    Meet {productInfo.title}
                 </div>
 
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-6 max-w-4xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
@@ -45,7 +63,7 @@ export default function Hero() {
                 </h1>
 
                 <p className="text-lg md:text-xl text-foreground/70 mb-10 max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                    Experience studio-quality audio enclosed in a masterpiece of modern architecture. Designed for the purist.
+                    {productInfo.description}
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
