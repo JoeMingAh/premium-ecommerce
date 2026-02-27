@@ -35,7 +35,7 @@ export default function Navbar() {
                 {/* Logo / Brand Name */}
                 <div className="flex items-center gap-2">
                     <Menu className="w-6 h-6 md:hidden cursor-pointer" />
-                    <span className="font-display font-bold text-xl tracking-tight">ECLIPSE.</span>
+                    <span className="font-display font-bold text-xl tracking-tight">Sip Haven.</span>
                 </div>
 
                 {/* Desktop Links (Hidden on mobile) */}
