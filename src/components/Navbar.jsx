@@ -42,7 +42,8 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center gap-8 font-medium text-sm text-foreground/80">
                     <a href="#" className="hover:text-primary transition-colors">Home</a>
                     <a href="#features" className="hover:text-primary transition-colors">Coffee</a>
-                    <a href="#" className="hover:text-primary transition-colors">Tea Recipes</a>
+                    <a href="#" className="hover:text-primary transition-colors">Tea</a>
+                    <a href="#" className="hover:text-primary transition-colors">Recipes</a>
                 </div>
 
                 {/* Persistent CTA */}
