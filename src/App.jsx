@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans dark">
+    <div className="min-h-screen bg-background text-foreground flex flex-col font-sans">
       <TopBanner />
       <Navbar />
       <main className="flex-grow">

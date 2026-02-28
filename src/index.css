@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,27 +6,18 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 9%;
+    /* Warm Oat Background */
+    --background: 40 33% 98%;
+    /* Espresso Brown Text */
+    --foreground: 20 16% 15%;
 
-    --primary: 221 83% 53%;
-    /* High contrast Blue accent */
-    --primary-foreground: 210 40% 98%;
+    /* Terracotta Accent */
+    --primary: 18 49% 51%;
+    --primary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --border: 214.3 31.8% 91.4%;
-  }
-
-  .dark {
-    --background: 0 0% 3%;
-    /* Ultra dark, almost black for premium feel */
-    --foreground: 0 0% 98%;
-
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 240 3.7% 15.9%;
-    --border: 240 3.7% 15.9%;
+    /* Light Latte / Beige for Cards */
+    --muted: 40 30% 93%;
+    --border: 40 25% 85%;
   }
 }
 
