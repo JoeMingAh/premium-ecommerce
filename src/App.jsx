@@ -1,6 +1,7 @@
 import TopBanner from './components/TopBanner';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import ProductSection from './components/ProductSection';
 import Features from './components/Features';
 import SocialProof from './components/SocialProof';
 import Footer from './components/Footer';
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <ProductSection />
         <Features />
         <SocialProof />
       </main>
