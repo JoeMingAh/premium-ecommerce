@@ -5,9 +5,9 @@ import { createCheckoutWithProduct, fetchDefaultProduct } from '../lib/shopify';
 export default function Hero() {
     const [isCheckingOut, setIsCheckingOut] = useState(false);
     const [productInfo, setProductInfo] = useState({
-        title: "Eclipse 2.0",
-        description: "Experience studio-quality audio enclosed in a masterpiece of modern architecture. Designed for the purist.",
-        imageUrl: "/hero_product.png",
+        title: "Sip Haven",
+        description: "Loading premium coffee...",
+        imageUrl: "",
         variantId: "gid://shopify/ProductVariant/45505881564227"
     });
 
