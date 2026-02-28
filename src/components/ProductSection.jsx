@@ -10,18 +10,21 @@ export default function ProductSection() {
         title: "Sip Haven",
         description: "Loading premium coffee...",
         imageUrl: "",
-        variantId: "gid://shopify/ProductVariant/45505881564227"
+        variantId: "gid://shopify/ProductVariant/45505881564227",
+        price: 25.00
     });
 
     useEffect(() => {
         const loadProduct = async () => {
             const product = await fetchDefaultProduct();
             if (product) {
+                const variant = product.variants[0];
                 setProductInfo({
                     title: product.title || "Premium Product",
                     description: product.description || "The perfect decaf experience.",
                     imageUrl: product.images[0]?.src || "/hero_product.png",
-                    variantId: product.variants[0]?.id || "gid://shopify/ProductVariant/45505881564227"
+                    variantId: variant?.id || "gid://shopify/ProductVariant/45505881564227",
+                    price: variant?.price?.amount ? parseFloat(variant.price.amount) : 25.00
                 });
             }
         };
@@ -38,6 +41,9 @@ export default function ProductSection() {
             setIsCheckingOut(false);
         }
     };
+
+    const basePrice = productInfo.price;
+    const subscribePrice = (basePrice * 0.85).toFixed(2);
 
     return (
         <section id="product" className="py-24 bg-background">
@@ -128,7 +134,7 @@ export default function ProductSection() {
                             disabled={isCheckingOut}
                             className="w-full bg-foreground hover:bg-foreground/90 text-background px-8 py-4 rounded-xl font-bold text-lg transition-all hover-lift flex items-center justify-center gap-3 disabled:opacity-70 disabled:pointer-events-none"
                         >
-                            {isCheckingOut ? 'Loading Secure Checkout...' : (isSubscribed ? 'Subscribe Now — $18.70' : 'Buy Once — $22.00')}
+                            {isCheckingOut ? 'Loading Secure Checkout...' : (isSubscribed ? `Subscribe Now — $${subscribePrice}` : `Buy Once — $${basePrice.toFixed(2)}`)}
                             {isCheckingOut ? <Loader2 className="w-5 h-5 animate-spin" /> : <ShoppingBag className="w-5 h-5" />}
                         </button>
                     </div>
